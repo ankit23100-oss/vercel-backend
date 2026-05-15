@@ -12,7 +12,7 @@ const server = http.createServer(app);
 
 const io = socket(server, {
     cors: {
-        origin: "http://localhost:5173",
+        origin: "https://frontend-versel-one.vercel.app/",
         methods: ["GET", "POST"]
     }
 });
