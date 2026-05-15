@@ -6,16 +6,18 @@ const cors=require('cors');
 
 const app=express();
 
-app.use(cors());
-
 const server = http.createServer(app);
 
-const io = socket(server, {
-    cors: {
-        origin: "https://frontend-versel-one.vercel.app/",
-        methods: ["GET", "POST"]
-    }
-});
+const allowedOrigins = [
+        process.env.FRONTEND_URL || "https://frontend-versel-one.vercel.app/",
+        "http://localhost:5173"
+    ];
+
+app.use(cors({
+    origin: allowedOrigins
+}));
+
+
 
 const chess = new Chess();
 let players={};

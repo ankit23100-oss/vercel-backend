@@ -1,5 +1,8 @@
 {
  "version": 2,
+ "env": {
+  "FRONTEND_URL": "https://frontend-versel-one.vercel.app/"
+ },
  "builds": [
   {
    "src": "app.js",
